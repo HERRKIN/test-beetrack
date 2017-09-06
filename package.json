@@ -2,6 +2,16 @@
   "name": "beeetrack-javascript-test",
   "version": "1.0.0",
   "devDependencies": {
-    "json-server": "^0.11.2"
+    "json-server": "^0.11.2",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-scripts": "^1.0.13"
+  },
+  "scripts": {
+    "start": "node server",
+    "dev": "npm start & PORT=3006 react-scripts start"
+  },
+  "proxy": "http://localhost:3100",
+  "dependencies": {
+    "react-modal": "^2.2.4"
   }
 }
