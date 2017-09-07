@@ -41,6 +41,7 @@ h1{
 }
 a {
   color: #0275d8;
+  text-decoration: none;
 }
 
 a:hover {
@@ -120,6 +121,9 @@ button {
   line-height: 18px;
   font-weight: bold;
 }
+button:disabled{
+  background: gray;
+}
 .search-input:focus-within{
   box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.75);
 }
@@ -157,7 +161,9 @@ button {
   height: 40px;
   margin-right: 5px;
 }
-
+.avatar+div > span{
+  font-weight: bold;
+}
 .tablehead {
   width: 100%;
   font-weight: bold;
@@ -169,6 +175,11 @@ button {
   border: 1px solid lightgray;
   align-items: center;
 }
+.row:not(:first-child):nth-child(odd){
+  background-color: ghostwhite;
+}
+
+
 .row a{
   display: none;
 }
@@ -178,6 +189,7 @@ button {
 }
 h1 > button {
   float: right;
+  margin-right: 10px;
 }
 form#new {
   display: flex;
@@ -212,4 +224,21 @@ form#new {
   align-self: center;
   width: 100%;
   max-width: 200px;￼
+}
+.pagination > a {
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 10px;
+  color: #333;
+  text-decoration: none;
+}
+.pagination > a.next{
+  float: right;
+}
+.pagination i {
+  background: #fab43d;
+  color: white;
+  padding:5px;
+  border-radius: 100%;
 }

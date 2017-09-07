@@ -5,10 +5,6 @@ import NewContact from './NewContact'
 
 export default class Header extends React.Component {
 
-  static propTypes = {
-
-  }
-
   render () {
     return (
       <div className='header'>
@@ -22,9 +18,10 @@ export default class Header extends React.Component {
           <input id='search-box'
             placeholder='Search contact'
             type='text'
+            onChange={e => {this.props.onSearch({q:e.currentTarget.value})}}
           />
         </div>
-        <NewContact />
+        <NewContact onUpdated={this.props.onUpdated}/>
       </div>
     )
   }

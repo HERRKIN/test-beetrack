@@ -9,14 +9,14 @@ const TableHead =  props =>(
     <div>Descripcion</div>
   </div>
 )
-const ListItem =  ({item}) => (
+const ListItem =  ({item, onDelete}) => (
   <div className='row'>
     <div>
       <div className='avatar' style={imgStyle(item.photo)}>
       </div>
       <div>
-        {item.name}
-        <a href='#'>
+        <span>{item.name}</span>
+        <a href='#' onClick={() =>{onDelete(item.id)}}>
           eliminar
         </a>
       </div>
@@ -25,26 +25,17 @@ const ListItem =  ({item}) => (
   </div>
 )
 
-
-
-
 export default class List extends React.Component {
-
-  static propTypes = {
-
-  }
 
   render () {
     let renderList = records => (
       <div className='list'>
       <TableHead />
-      {records.map(item =>(<ListItem key={item.id} item={item} />))}
+      {records.map(item =>(<ListItem key={item.id} item={item} onDelete={this.props.onDelete} />))}
       </div>
-
     )
     const {list} = this.props
-    console.log('list', list, list && list.legth > 0)
-    return (!list ||  list.legth > 0) ? (<div>no hay elementos</div>): renderList(list)
+    return (list.length > 0) ? renderList(list) : (<div className='list'><b>no hay resultados</b></div>)
 
       }
 
