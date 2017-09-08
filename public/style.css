@@ -20,9 +20,7 @@ header {
   border-bottom: 1px solid #EEE;
 }
 
-header a, header a:hover {
-  text-decoration: none;
-}
+
 
 main {
   flex: 1;
@@ -121,9 +119,14 @@ button {
   line-height: 18px;
   font-weight: bold;
 }
+
+button:hover{
+  box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.75);
+}
 button:disabled{
   background: gray;
 }
+
 .search-input:focus-within{
   box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.75);
 }
@@ -231,7 +234,6 @@ form#new {
   display: inline-block;
   margin-top: 10px;
   color: #333;
-  text-decoration: none;
 }
 .pagination > a.next{
   float: right;
